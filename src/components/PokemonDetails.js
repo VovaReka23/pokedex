@@ -38,6 +38,6 @@ const PokemonDetails = ({ pokemonDetails }) => {
     )
 }
 PokemonDetails.propTypes = {
-    pokemonDetails: PropTypes.array
+    pokemonDetails: PropTypes.object
 }
 export default PokemonDetails

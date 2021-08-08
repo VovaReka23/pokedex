@@ -8,6 +8,7 @@ const initialState = {
 	next: '',
 	pokemonDetails: [],
 	error: null,
+	selected: ''
 }
 
 const pokemons = (state = initialState, action) => {
@@ -48,7 +49,7 @@ const pokemons = (state = initialState, action) => {
 			return { ...state, loadingPokemons: false, error: action.payload }
 
 		case 'GET_STATS':
-			return { ...state, pokemonDetails: action.payload }
+			return { ...state, pokemonDetails: action.payload, selected: action.id }
 
 		default:
 			return state

@@ -4,18 +4,19 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-
+import selectedImg from '../assets/img/selected.png';
 import styles from '../assets/scss/Card.module.scss';
 
 
-function MediaControlCard({ pokemon, onSelect }) {
+function MediaControlCard({ pokemon, onSelect, selected }) {
     return (
-        <Card onClick={(e) => onSelect(e, pokemon.stats, pokemon.url, pokemon.forms.name)} className={styles.card}>
+        <Card onClick={(e) => onSelect(e, pokemon.stats, pokemon.url, pokemon.forms.name, pokemon.id)} className={styles.card}>
             <CardMedia
                 className={styles.img}
                 image={pokemon.url}
                 title={pokemon.forms.name}
             />
+            {selected === pokemon.id && <img className={styles.selected} src={selectedImg} alt="selected" />}
             <div className={styles.details}>
                 <CardContent className={styles.content}>
                     <Typography component="h4" variant="h4">

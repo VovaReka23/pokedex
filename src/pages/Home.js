@@ -20,15 +20,15 @@ const Home = (props) => {
             props.getLoadMore(props.next);
         }
     };
-    const onChekedCart = (e, stats, img, name) => {
-        props.getStats({ name, img, stats });
+    const onselectedCart = (e, stats, img, name, id) => {
+        props.getStats({ name, img, stats }, id);
     }
     return (
         <div className={styles.container}>
             <div className={styles.cardCotainer}>
                 {props.loadedPokemons &&
                     props.pokemons.map((pokemon) => (
-                        <Card onSelect={onChekedCart} key={pokemon.id} pokemon={pokemon} />
+                        <Card selected={props.selected} onSelect={onselectedCart} key={pokemon.id} pokemon={pokemon} />
                     ))
                 }
                 <Button onClick={handleClick} label="Load More" />
@@ -47,6 +47,7 @@ const mapStateToProps = state => ({
     next: state.pokemons.next,
     loadedPokemons: state.pokemons.loadedPokemons,
     pokemonDetails: state.pokemons.pokemonDetails,
+    selected: state.pokemons.selected,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

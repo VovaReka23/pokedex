@@ -45,8 +45,8 @@ const getLoadMore = (url) => async dispatch => {
 /**
  * Get Stats info
  */
-const getStats = (pokemonDetails) => dispatch => {
-    dispatch({ type: 'GET_STATS', payload: pokemonDetails })
+const getStats = (pokemonDetails, id) => dispatch => {
+    dispatch({ type: 'GET_STATS', payload: pokemonDetails, id: id })
 }
 
 export {
