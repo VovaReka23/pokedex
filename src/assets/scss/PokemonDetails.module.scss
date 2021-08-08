@@ -1,0 +1,39 @@
+.pokemonDetails {
+    width: 30%;
+    position: relative;
+    table {
+      width: 90%;
+      margin: 20px 5%;
+      border: 1px solid #999;
+    }
+    .block {
+      border: 1px solid #999;
+      position: sticky;
+      top: 30px;
+      right: 0;
+    }
+    .img {
+      width: calc(100% -20px);
+      margin: 30px 10px;
+      height: 200px;
+      background-size: contain;
+    }
+    h4 {
+      text-align: center;
+      text-transform: capitalize;
+    }
+    .type {
+      width: 70%;
+      border: 1px solid #999;
+      margin: 0;
+      padding-left: 5px;
+      text-transform: capitalize;
+    
+    }
+    .fire {
+      width: 30%;
+      border: 1px solid #999;
+      margin: 0;
+      padding-left: 5px;
+    }
+}
